@@ -200,12 +200,15 @@
 	},
 	"file_history":
 	[
+		"/D/My Documents/Projects/rpi/rpiZero_baremetal/.gitignore",
+		"/D/My Documents/Projects/rpi/rpiZero_baremetal/src/main.c",
+		"/D/My Documents/Projects/rpi/rpiZero_baremetal/build.bat",
+		"/D/My Documents/Projects/rpi/rpiZero_baremetal/bin/kernel.elf",
+		"/D/My Documents/Projects/rpi/rpiZero_baremetal/.gitattributes",
 		"/D/My Documents/Projects/rpi/rpiZero_baremetal/todo.txt",
 		"/D/My Documents/Projects/rpi/rpiZero_baremetal/src/cstubs.c",
 		"/D/My Documents/Projects/rpi/rpiZero_baremetal/src/gpio.c",
-		"/D/My Documents/Projects/rpi/rpiZero_baremetal/build.bat",
 		"/D/My Documents/Projects/rpi/rpiZero_baremetal/src/gpio.h",
-		"/D/My Documents/Projects/rpi/rpiZero_baremetal/src/main.c",
 		"/D/My Documents/Projects/rpi/rpiZero_baremetal/src/start.S",
 		"/D/My Documents/Projects/rpi/rpiZero_baremetal/src/cstartup.c",
 		"/D/My Documents/Projects/rpi/rpiZero_baremetal/src/rpi.x",
@@ -324,10 +327,7 @@
 		"/D/My Documents/Projects/CodeBlocks Projects/rpiZero/test.bat",
 		"/D/My Documents/Projects/rpi/rpi_helloWorld/rpiZero/CMakeLists.txt",
 		"/D/My Documents/Projects/rpi/rpi_helloWorld/rpiZero/toolchain-arm-none-eabi.cmake",
-		"/D/My Documents/Projects/rpi/rpi_helloWorld/rpiZero/build/configure.bat",
-		"/D/My Documents/Projects/rpi/rpi_helloWorld/tutorial_5_cmake/build/disassemble.bat",
-		"/D/My Documents/Projects/rpi/rpi_helloWorld/tutorial_5_cmake/build/CMakeFiles/tutorial_5_cmake.dir/cstartup.c.obj",
-		"/D/My Documents/Projects/rpi/rpi_helloWorld/tutorial_5_cmake/build/kernel.asm"
+		"/D/My Documents/Projects/rpi/rpi_helloWorld/rpiZero/build/configure.bat"
 	],
 	"find":
 	{
@@ -638,6 +638,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 186.0,
+	"side_bar_width": 241.0,
 	"status_bar_visible": true
 }

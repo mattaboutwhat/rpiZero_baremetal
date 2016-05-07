@@ -29,7 +29,7 @@ FOR /f "delims== tokens=1,2" %%x in (headers.txt) do (
 )
 DEL targets.txt
 DEL headers.txt
-SET rpi0=-mfpu=vfp -mfloat-abi=hard -march=armv6zk -mtune=arm1176jzf-s -nostartfiles -g -Wl,-T,rpi.x
+SET rpi0=-mfpu=vfp -mfloat-abi=hard -march=armv6zk -mtune=arm1176jzf-s -std=c99 -nostartfiles -g -Wl,-T,rpi.x
 ::Commands for outputting to log file
 ::ECHO Starting build using rm-none-eabi-gcc -O0 %rpi0% %makeTargets%-o ../bin/kernel.elf>../build.log
 ::arm-none-eabi-gcc -O0 %rpi0% %makeTargets%-o ../bin/kernel.elf 2>>../build.log
