@@ -1,0 +1,220 @@
+getArmTimer	src\armtimer.c	/^arm_timer_t* getArmTimer (void)$/;"	f
+rpiArmTimer	src\armtimer.c	/^static arm_timer_t* rpiArmTimer = (arm_timer_t*)ARMTIMER_BASE;$/;"	v	file:
+ARMTIMER_BASE	src\armtimer.h	7;"	d
+ARM_TIMER_H	src\armtimer.h	2;"	d
+Control	src\armtimer.h	/^    volatile uint32_t Control;$/;"	m	struct:__anon1
+FreeRunningCounter	src\armtimer.h	/^    volatile uint32_t FreeRunningCounter;$/;"	m	struct:__anon1
+IRQClear	src\armtimer.h	/^    volatile uint32_t IRQClear;$/;"	m	struct:__anon1
+Load	src\armtimer.h	/^    volatile uint32_t Load;$/;"	m	struct:__anon1
+MaskedIRQ	src\armtimer.h	/^    volatile uint32_t MaskedIRQ;$/;"	m	struct:__anon1
+PreDivider	src\armtimer.h	/^    volatile uint32_t PreDivider;$/;"	m	struct:__anon1
+RAWIRQ	src\armtimer.h	/^    volatile uint32_t RAWIRQ;$/;"	m	struct:__anon1
+RPI_ARMTIMER_CTRL_23BIT	src\armtimer.h	10;"	d
+RPI_ARMTIMER_CTRL_DISABLE	src\armtimer.h	22;"	d
+RPI_ARMTIMER_CTRL_ENABLE	src\armtimer.h	21;"	d
+RPI_ARMTIMER_CTRL_INT_DISABLE	src\armtimer.h	18;"	d
+RPI_ARMTIMER_CTRL_INT_ENABLE	src\armtimer.h	17;"	d
+RPI_ARMTIMER_CTRL_PRESCALE_1	src\armtimer.h	12;"	d
+RPI_ARMTIMER_CTRL_PRESCALE_16	src\armtimer.h	13;"	d
+RPI_ARMTIMER_CTRL_PRESCALE_256	src\armtimer.h	14;"	d
+Reload	src\armtimer.h	/^    volatile uint32_t Reload;$/;"	m	struct:__anon1
+Value	src\armtimer.h	/^    volatile uint32_t Value;$/;"	m	struct:__anon1
+arm_timer_t	src\armtimer.h	/^    } arm_timer_t;$/;"	t	typeref:struct:__anon1
+PERIPH_BASE	src\base.h	4;"	d
+RPI_BASE	src\base.h	2;"	d
+_cstartup	src\cstartup.c	/^void _cstartup(unsigned int r0, unsigned int r1, unsigned int r2)$/;"	f
+__env	src\cstubs.c	/^char *__env[1] = {0};$/;"	v
+_close	src\cstubs.c	/^int _close( int file )$/;"	f
+_exit	src\cstubs.c	/^void _exit( int status )$/;"	f
+_fstat	src\cstubs.c	/^int _fstat( int file, struct stat *st )$/;"	f
+_isatty	src\cstubs.c	/^int _isatty(int file)$/;"	f
+_lseek	src\cstubs.c	/^int _lseek(int file, int ptr, int dir)$/;"	f
+_read	src\cstubs.c	/^int _read( int file, char *ptr, int len )$/;"	f
+_sbrk	src\cstubs.c	/^caddr_t _sbrk( int incr )$/;"	f
+_write	src\cstubs.c	/^int _write( int file, char *ptr, int len )$/;"	f
+environ	src\cstubs.c	/^char **environ = __env;$/;"	v
+errno	src\cstubs.c	56;"	d	file:
+execve	src\cstubs.c	/^int execve( char *name, char **argv, char **env )$/;"	f
+fork	src\cstubs.c	/^int fork( void )$/;"	f
+getpid	src\cstubs.c	/^int getpid( void )$/;"	f
+kill	src\cstubs.c	/^int kill( int pid, int sig )$/;"	f
+link	src\cstubs.c	/^int link( char *old, char *new )$/;"	f
+open	src\cstubs.c	/^int open( const char *name, int flags, int mode )$/;"	f
+outbyte	src\cstubs.c	/^void outbyte( char b )$/;"	f
+stat	src\cstubs.c	/^int stat( const char *file, struct stat *st )$/;"	f
+times	src\cstubs.c	/^clock_t times( struct tms *buf )$/;"	f
+unlink	src\cstubs.c	/^int unlink( char *name )$/;"	f
+wait	src\cstubs.c	/^int wait( int *status )$/;"	f
+getGPIOController	src\gpio.c	/^gpio_controller_t* getGPIOController( void )$/;"	f
+gpioController	src\gpio.c	/^static gpio_controller_t* gpioController = (gpio_controller_t*)GPIO_BASE;$/;"	v	file:
+AsyncNegEdgeDet0	src\gpio.h	/^	volatile uint32_t AsyncNegEdgeDet0;	\/\/0x88$/;"	m	struct:__anon2
+AsyncNegEdgeDet1	src\gpio.h	/^	volatile uint32_t AsyncNegEdgeDet1;	\/\/0x8C$/;"	m	struct:__anon2
+AsyncPosEdgeDet0	src\gpio.h	/^	volatile uint32_t AsyncPosEdgeDet0;	\/\/0x7C$/;"	m	struct:__anon2
+AsyncPosEdgeDet1	src\gpio.h	/^	volatile uint32_t AsyncPosEdgeDet1;	\/\/0x80$/;"	m	struct:__anon2
+EventDetect0	src\gpio.h	/^	volatile uint32_t EventDetect0;		\/\/0x40$/;"	m	struct:__anon2
+EventDetect1	src\gpio.h	/^	volatile uint32_t EventDetect1;		\/\/0x44$/;"	m	struct:__anon2
+FuncSelect0	src\gpio.h	/^	volatile uint32_t FuncSelect0;		\/\/0x00$/;"	m	struct:__anon2
+FuncSelect1	src\gpio.h	/^	volatile uint32_t FuncSelect1;		\/\/0x04$/;"	m	struct:__anon2
+FuncSelect2	src\gpio.h	/^	volatile uint32_t FuncSelect2;		\/\/0x08$/;"	m	struct:__anon2
+FuncSelect3	src\gpio.h	/^	volatile uint32_t FuncSelect3;		\/\/0x0C$/;"	m	struct:__anon2
+FuncSelect4	src\gpio.h	/^	volatile uint32_t FuncSelect4;		\/\/0x10$/;"	m	struct:__anon2
+FuncSelect5	src\gpio.h	/^	volatile uint32_t FuncSelect5;		\/\/0x14$/;"	m	struct:__anon2
+GPIO_AFEN0	src\gpio.h	51;"	d
+GPIO_AFEN1	src\gpio.h	52;"	d
+GPIO_AREN0	src\gpio.h	48;"	d
+GPIO_AREN1	src\gpio.h	49;"	d
+GPIO_BASE	src\gpio.h	7;"	d
+GPIO_CLR0	src\gpio.h	27;"	d
+GPIO_CLR1	src\gpio.h	28;"	d
+GPIO_EDS0	src\gpio.h	33;"	d
+GPIO_EDS1	src\gpio.h	34;"	d
+GPIO_FEN0	src\gpio.h	39;"	d
+GPIO_FEN1	src\gpio.h	40;"	d
+GPIO_FSEL0	src\gpio.h	17;"	d
+GPIO_FSEL1	src\gpio.h	18;"	d
+GPIO_FSEL2	src\gpio.h	19;"	d
+GPIO_FSEL3	src\gpio.h	20;"	d
+GPIO_FSEL4	src\gpio.h	21;"	d
+GPIO_FSEL5	src\gpio.h	22;"	d
+GPIO_HEN0	src\gpio.h	42;"	d
+GPIO_HEN1	src\gpio.h	43;"	d
+GPIO_LEN0	src\gpio.h	45;"	d
+GPIO_LEN1	src\gpio.h	46;"	d
+GPIO_LEV0	src\gpio.h	30;"	d
+GPIO_LEV1	src\gpio.h	31;"	d
+GPIO_PUD	src\gpio.h	54;"	d
+GPIO_PUDCLK0	src\gpio.h	55;"	d
+GPIO_PUDCLK1	src\gpio.h	56;"	d
+GPIO_REN0	src\gpio.h	36;"	d
+GPIO_REN1	src\gpio.h	37;"	d
+GPIO_SET0	src\gpio.h	24;"	d
+GPIO_SET1	src\gpio.h	25;"	d
+GPPUD	src\gpio.h	/^	volatile uint32_t GPPUD;			\/\/0x94$/;"	m	struct:__anon2
+GPPUDCLK0	src\gpio.h	/^	volatile uint32_t GPPUDCLK0;		\/\/0x98$/;"	m	struct:__anon2
+GPPUDCLK1	src\gpio.h	/^	volatile uint32_t GPPUDCLK1;		\/\/0x9C$/;"	m	struct:__anon2
+HighDetectEn0	src\gpio.h	/^	volatile uint32_t HighDetectEn0;	\/\/0x64$/;"	m	struct:__anon2
+HighDetectEn1	src\gpio.h	/^	volatile uint32_t HighDetectEn1;	\/\/0x68$/;"	m	struct:__anon2
+LED_CLR	src\gpio.h	13;"	d
+LED_FSEL	src\gpio.h	10;"	d
+LED_FSELBIT	src\gpio.h	11;"	d
+LED_GPIOBIT	src\gpio.h	14;"	d
+LED_SET	src\gpio.h	12;"	d
+LowDetectEn0	src\gpio.h	/^	volatile uint32_t LowDetectEn0;		\/\/0x70$/;"	m	struct:__anon2
+LowDetectEn1	src\gpio.h	/^	volatile uint32_t LowDetectEn1;		\/\/0x74$/;"	m	struct:__anon2
+NedEdgeDetectEn1	src\gpio.h	/^	volatile uint32_t NedEdgeDetectEn1; \/\/0x5C$/;"	m	struct:__anon2
+NegEdgeDetectEn0	src\gpio.h	/^	volatile uint32_t NegEdgeDetectEn0; \/\/0x58$/;"	m	struct:__anon2
+OutClear0	src\gpio.h	/^	volatile uint32_t OutClear0;		\/\/0x28$/;"	m	struct:__anon2
+OutClear1	src\gpio.h	/^	volatile uint32_t OutClear1;		\/\/0x2C$/;"	m	struct:__anon2
+OutSet0	src\gpio.h	/^	volatile uint32_t OutSet0;			\/\/0x1C$/;"	m	struct:__anon2
+OutSet1	src\gpio.h	/^	volatile uint32_t OutSet1;			\/\/0x20$/;"	m	struct:__anon2
+PinLevel0	src\gpio.h	/^	volatile uint32_t PinLevel0;		\/\/0x34$/;"	m	struct:__anon2
+PinLevel1	src\gpio.h	/^	volatile uint32_t PinLevel1;		\/\/0x38$/;"	m	struct:__anon2
+PosEdgeDetectEn0	src\gpio.h	/^	volatile uint32_t PosEdgeDetectEn0; \/\/0x4C$/;"	m	struct:__anon2
+PosEdgeDetectEn1	src\gpio.h	/^	volatile uint32_t PosEdgeDetectEn1; \/\/0x50$/;"	m	struct:__anon2
+RPI_GPIO_H	src\gpio.h	2;"	d
+Reserved0	src\gpio.h	/^	volatile uint32_t Reserved0;		\/\/0x18$/;"	m	struct:__anon2
+Reserved1	src\gpio.h	/^	volatile uint32_t Reserved1;		\/\/0x24$/;"	m	struct:__anon2
+Reserved10	src\gpio.h	/^	volatile uint32_t Reserved10;		\/\/0x90$/;"	m	struct:__anon2
+Reserved11	src\gpio.h	/^	volatile uint32_t Reserved11;		\/\/0xA0$/;"	m	struct:__anon2
+Reserved12	src\gpio.h	/^	volatile uint32_t Reserved12;		\/\/0xA4$/;"	m	struct:__anon2
+Reserved13	src\gpio.h	/^	volatile uint32_t Reserved13;		\/\/0xA8$/;"	m	struct:__anon2
+Reserved14	src\gpio.h	/^	volatile uint32_t Reserved14;		\/\/0xAC$/;"	m	struct:__anon2
+Reserved2	src\gpio.h	/^	volatile uint32_t Reserved2;		\/\/0x30$/;"	m	struct:__anon2
+Reserved3	src\gpio.h	/^	volatile uint32_t Reserved3;		\/\/0x3C$/;"	m	struct:__anon2
+Reserved4	src\gpio.h	/^	volatile uint32_t Reserved4;		\/\/0x48$/;"	m	struct:__anon2
+Reserved5	src\gpio.h	/^	volatile uint32_t Reserved5;		\/\/0x54$/;"	m	struct:__anon2
+Reserved6	src\gpio.h	/^	volatile uint32_t Reserved6;		\/\/0x60$/;"	m	struct:__anon2
+Reserved7	src\gpio.h	/^	volatile uint32_t Reserved7;		\/\/0x6C$/;"	m	struct:__anon2
+Reserved8	src\gpio.h	/^	volatile uint32_t Reserved8;		\/\/0x78$/;"	m	struct:__anon2
+Reserved9	src\gpio.h	/^	volatile uint32_t Reserved9;		\/\/0x84$/;"	m	struct:__anon2
+Test	src\gpio.h	/^	volatile uint8_t  Test;				\/\/0xB0$/;"	m	struct:__anon2
+gpio_controller_t	src\gpio.h	/^	} gpio_controller_t;$/;"	t	typeref:struct:__anon2
+data_abort_vector	src\interrupts.c	/^void __attribute__((interrupt("ABORT"))) data_abort_vector(void)$/;"	f
+fast_interrupt_vector	src\interrupts.c	/^void __attribute__((interrupt("FIQ"))) fast_interrupt_vector(void)$/;"	f
+getIrqController	src\interrupts.c	/^irq_controller_t* getIrqController( void )$/;"	f
+interrupt_vector	src\interrupts.c	/^void __attribute__((interrupt("IRQ"))) interrupt_vector(void)$/;"	f
+prefetch_abort_vector	src\interrupts.c	/^void __attribute__((interrupt("ABORT"))) prefetch_abort_vector(void)$/;"	f
+reset_vector	src\interrupts.c	/^void __attribute__((interrupt("ABORT"))) reset_vector(void)$/;"	f
+rpiIRQController	src\interrupts.c	/^static irq_controller_t* rpiIRQController = (irq_controller_t*)IRQ_BASE;$/;"	v	file:
+software_interrupt_vector	src\interrupts.c	/^void __attribute__((interrupt("SWI"))) software_interrupt_vector(void)$/;"	f
+undefined_instruction_vector	src\interrupts.c	/^void __attribute__((interrupt("UNDEF"))) undefined_instruction_vector(void)$/;"	f
+Disable_Basic_IRQs	src\interrupts.h	/^    volatile uint32_t Disable_Basic_IRQs;$/;"	m	struct:__anon3
+Disable_IRQs_1	src\interrupts.h	/^    volatile uint32_t Disable_IRQs_1;$/;"	m	struct:__anon3
+Disable_IRQs_2	src\interrupts.h	/^    volatile uint32_t Disable_IRQs_2;$/;"	m	struct:__anon3
+Enable_Basic_IRQs	src\interrupts.h	/^    volatile uint32_t Enable_Basic_IRQs;$/;"	m	struct:__anon3
+Enable_IRQs_1	src\interrupts.h	/^    volatile uint32_t Enable_IRQs_1;$/;"	m	struct:__anon3
+Enable_IRQs_2	src\interrupts.h	/^    volatile uint32_t Enable_IRQs_2;$/;"	m	struct:__anon3
+FIQ_control	src\interrupts.h	/^    volatile uint32_t FIQ_control;$/;"	m	struct:__anon3
+IRQ_BASE	src\interrupts.h	7;"	d
+IRQ_basic_pending	src\interrupts.h	/^    volatile uint32_t IRQ_basic_pending;$/;"	m	struct:__anon3
+IRQ_pending_1	src\interrupts.h	/^    volatile uint32_t IRQ_pending_1;$/;"	m	struct:__anon3
+IRQ_pending_2	src\interrupts.h	/^    volatile uint32_t IRQ_pending_2;$/;"	m	struct:__anon3
+RPI_BASIC_ACCESS_ERROR_0_IRQ	src\interrupts.h	17;"	d
+RPI_BASIC_ACCESS_ERROR_1_IRQ	src\interrupts.h	16;"	d
+RPI_BASIC_ARM_DOORBELL_0_IRQ	src\interrupts.h	12;"	d
+RPI_BASIC_ARM_DOORBELL_1_IRQ	src\interrupts.h	13;"	d
+RPI_BASIC_ARM_MAILBOX_IRQ	src\interrupts.h	11;"	d
+RPI_BASIC_ARM_TIMER_IRQ	src\interrupts.h	10;"	d
+RPI_BASIC_GPU_0_HALTED_IRQ	src\interrupts.h	14;"	d
+RPI_BASIC_GPU_1_HALTED_IRQ	src\interrupts.h	15;"	d
+RPI_INTERRUPTS_H	src\interrupts.h	2;"	d
+irq_controller_t	src\interrupts.h	/^    } irq_controller_t;$/;"	t	typeref:struct:__anon3
+kernel_main	src\main.c	/^void kernel_main(unsigned int r0, unsigned int r1, unsigned int atags)$/;"	f
+auxController	src\rpi-aux.c	/^static aux_t* auxController = (aux_t*)AUX_BASE;$/;"	v	file:
+getAuxController	src\rpi-aux.c	/^aux_t* getAuxController(void)$/;"	f
+AUX_BASE	src\rpi-aux.h	7;"	d
+AUX_ENABLES	src\rpi-aux.h	/^	volatile uint32_t AUX_ENABLES;$/;"	m	struct:__anon4
+AUX_IRQ	src\rpi-aux.h	/^	volatile uint32_t AUX_IRQ;$/;"	m	struct:__anon4
+RPI_AUX	src\rpi-aux.h	2;"	d
+aux_t	src\rpi-aux.h	/^} aux_t;$/;"	t	typeref:struct:__anon4
+_data_abort_vector_h	src\start.S	/^_data_abort_vector_h:				.word	data_abort_vector $/;"	l
+_disable_interrupts	src\start.S	/^_disable_interrupts:$/;"	l
+_enable_interrupts	src\start.S	/^_enable_interrupts:$/;"	l
+_fast_interrupt_vector_h	src\start.S	/^_fast_interrupt_vector_h: 			.word	fast_interrupt_vector$/;"	l
+_get_stack_pointer	src\start.S	/^_get_stack_pointer:$/;"	l
+_inf_loop	src\start.S	/^_inf_loop:$/;"	l
+_interrupt_vector_h	src\start.S	/^_interrupt_vector_h:				.word 	interrupt_vector$/;"	l
+_prefetch_abort_vector_h	src\start.S	/^_prefetch_abort_vector_h:			.word	prefetch_abort_vector $/;"	l
+_reset_	src\start.S	/^_reset_:$/;"	l
+_reset_h	src\start.S	/^_reset_h:							.word	_reset_$/;"	l
+_software_interrupt_vector_h	src\start.S	/^_software_interrupt_vector_h:		.word	software_interrupt_vector$/;"	l
+_start	src\start.S	/^_start:$/;"	l
+_undefined_instruction_vector_h	src\start.S	/^_undefined_instruction_vector_h:	.word	undefined_instruction_vector$/;"	l
+_unused_handler_h	src\start.S	/^_unused_handler_h:					.word	_reset_$/;"	l
+GetSystemTimer	src\systimer.c	/^systimer_t* GetSystemTimer(void)$/;"	f
+WaitMicroSeconds	src\systimer.c	/^void WaitMicroSeconds( uint32_t us)$/;"	f
+rpiSystemTimer	src\systimer.c	/^static systimer_t* rpiSystemTimer = (systimer_t*)SYSTIMER_BASE;$/;"	v	file:
+SYSTIMER_BASE	src\systimer.h	9;"	d
+SYSTIMER_H	src\systimer.h	5;"	d
+compare0	src\systimer.h	/^    volatile uint32_t compare0;$/;"	m	struct:__anon5
+compare1	src\systimer.h	/^    volatile uint32_t compare1;$/;"	m	struct:__anon5
+compare2	src\systimer.h	/^    volatile uint32_t compare2;$/;"	m	struct:__anon5
+compare3	src\systimer.h	/^    volatile uint32_t compare3;$/;"	m	struct:__anon5
+control_status	src\systimer.h	/^    volatile uint32_t control_status;$/;"	m	struct:__anon5
+counter_hi	src\systimer.h	/^    volatile uint32_t counter_hi;$/;"	m	struct:__anon5
+counter_lo	src\systimer.h	/^    volatile uint32_t counter_lo;$/;"	m	struct:__anon5
+systimer_t	src\systimer.h	/^    } systimer_t;$/;"	t	typeref:struct:__anon5
+enableMUART	src\uart.c	/^void enableMUART( void )$/;"	f
+getMUARTController	src\uart.c	/^muart_t* getMUARTController ( void )$/;"	f
+miniUartWrite	src\uart.c	/^void miniUartWrite(char b)$/;"	f
+muartController	src\uart.c	/^static muart_t* muartController = (muart_t*)MUART_BASE;$/;"	v	file:
+MUART_BASE	src\uart.h	7;"	d
+MU_BAUD_REG	src\uart.h	/^	volatile uint32_t MU_BAUD_REG;	\/\/0x68$/;"	m	struct:__anon6
+MU_CNTL_REG	src\uart.h	/^	volatile uint32_t MU_CNTL_REG;	\/\/0x60$/;"	m	struct:__anon6
+MU_IER_REG	src\uart.h	/^	volatile uint32_t MU_IER_REG;	\/\/0x44$/;"	m	struct:__anon6
+MU_IIR_REG	src\uart.h	/^	volatile uint32_t MU_IIR_REG;	\/\/0x48$/;"	m	struct:__anon6
+MU_IO_REG	src\uart.h	/^	volatile uint32_t MU_IO_REG;	\/\/0x40$/;"	m	struct:__anon6
+MU_LCR_REG	src\uart.h	/^	volatile uint32_t MU_LCR_REG;	\/\/0x4C$/;"	m	struct:__anon6
+MU_LSR_REG	src\uart.h	/^	volatile uint32_t MU_LSR_REG;	\/\/0x54$/;"	m	struct:__anon6
+MU_MCR_REG	src\uart.h	/^	volatile uint32_t MU_MCR_REG;	\/\/0x50$/;"	m	struct:__anon6
+MU_MSR_REG	src\uart.h	/^	volatile uint32_t MU_MSR_REG;	\/\/0x58$/;"	m	struct:__anon6
+MU_SCRATCH	src\uart.h	/^	volatile uint32_t MU_SCRATCH;	\/\/0x5C$/;"	m	struct:__anon6
+MU_STAT_REG	src\uart.h	/^	volatile uint32_t MU_STAT_REG;	\/\/0x64$/;"	m	struct:__anon6
+RPI_AUX_MUART	src\uart.h	2;"	d
+muart_t	src\uart.h	/^} muart_t;$/;"	t	typeref:struct:__anon6
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/

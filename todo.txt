@@ -1,0 +1,32 @@
+1. Make GPIO struct
+	. can remove "extern uint* gpio" from "interrupts.c"!
+2. Test "_disable_interrupts" function
+3. Start on Mini UART controller!
+4. Then what? MMC? DMA? SPI? GPU 2D?
+	. SPI + DMA could become an LCD driver...
+	. GPU 2D probably won't, unless we can output to something 
+	  other than HDMI.
+5. Porting an emulator (or simpler program) to it.
+
+
+
+
+Things I wanna do:
+
+ [ ] Set up Eclipse RPi Zero toolchain
+	[ ] Hello world on ecplise
+ [ ] go through one guy's rpi makefile
+ [ ] fix systimer & uart interrupts
+
+
+Uart steps:
+	[ ]  0. Light the LED.
+	[ ]  1. LED, sys- or arm-timer-driven interrupt toggle
+			Needs:
+				base
+				interrupts
+				armtimer OR systimer
+				gpio
+	[ ]  2. UART-driven interrupt LED toggle
+	[ ]  3. UART echo
+	[ ]  4. useful UART
