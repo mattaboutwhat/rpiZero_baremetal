@@ -59,8 +59,8 @@ _reset_:
 //	ldmia 	r0!,{r2, r3, r4, r5, r6, r7, r8, r9}
 //	stmia 	r1!,{r2, r3, r4, r5, r6, r7, r8, r9}
 
-	//set stack stack pointer 		OLD
-	//ldr 	sp, =(64*1024*1024) 	OLD
+	//set stack stack pointer 		//OLD
+	//ldr 	sp, =(64*1024*1024) 	//OLD
 	//setup stack pointers, interrupt and application?
 	mov 	r0, #(CPSR_MODE_IRQ | CPSR_IRQ_INHIBIT | CPSR_FIQ_INHIBIT )
 	msr 	cpsr_c, r0
@@ -100,9 +100,11 @@ _enable_interrupts:
 	msr		cpsr_c, r0
 	mov 	pc, lr
 
+/*
 _disable_interrupts:
 	//Doesn't work :(
 	mrs		r0, cpsr
 	orr		r0, r0, #0x80
 	msr		cpsr_c, r0
 	mov		pc, lr
+*/
