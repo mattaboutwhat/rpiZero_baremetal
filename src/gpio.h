@@ -13,48 +13,6 @@
 #define LED_CLR         CLR1
 #define LED_GPIOBIT     15
 
-//GPIO Register Defines
-#define GPIO_FSEL0		0 	//0x0000
-#define GPIO_FSEL1      1
-#define GPIO_FSEL2      2
-#define GPIO_FSEL3      3
-#define GPIO_FSEL4      4
-#define GPIO_FSEL5      5
-
-#define GPIO_SET0		7	//0x001C
-#define GPIO_SET1   	8
-
-#define GPIO_CLR0     	10 	//0x0028
-#define GPIO_CLR1     	11
-
-#define GPIO_LEV0     	13	//0x0034
-#define GPIO_LEV1     	14
-
-#define GPIO_EDS0     	16	//0x0040
-#define GPIO_EDS1     	17
-
-#define GPIO_REN0     	19	//0x004C
-#define GPIO_REN1     	20
-
-#define GPIO_FEN0     	22	//0x0058
-#define GPIO_FEN1     	23
-
-#define GPIO_HEN0     	25	//0x0064
-#define GPIO_HEN1     	26
-
-#define GPIO_LEN0     	28	//0x0070
-#define GPIO_LEN1     	29
-
-#define GPIO_AREN0    	31	//0x007C
-#define GPIO_AREN1    	32
-
-#define GPIO_AFEN0    	34	//0x0088
-#define GPIO_AFEN1    	35
-
-#define GPIO_PUD      	37	//0x0094
-#define GPIO_PUDCLK0  	38
-#define GPIO_PUDCLK1  	39
-
 typedef struct {				//Offset from base:
 	volatile uint32_t FSEL0;		//0x00
 	volatile uint32_t FSEL1;		//0x04

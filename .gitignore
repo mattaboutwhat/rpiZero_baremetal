@@ -1,4 +1,6 @@
 debug/
+bin/bootcode.bin
+bin/start.elf
 src/keep_away
 todo.txt
 .tags

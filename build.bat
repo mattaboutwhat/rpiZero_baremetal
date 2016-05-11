@@ -45,8 +45,9 @@ arm-none-eabi-objcopy.exe ../bin/kernel.elf -O binary ../bin/kernel.img
 arm-none-eabi-objdump -D ../bin/kernel.elf > ../debug/kernel.asm 
 arm-none-eabi-nm ../bin/kernel.elf > ../debug/kernel.nm 
 arm-none-eabi-objdump -S ../bin/kernel.elf > ../debug/kernel.disasm
-ECHO Done.
 IF EXIST E:\ (
 	COPY "%~dp0\bin\kernel.img" E:\ >NUL
+	ECHO Wrote image to SD card.
 )
+ECHO Done
 ENDLOCAL
