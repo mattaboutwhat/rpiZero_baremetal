@@ -6,12 +6,33 @@
 
 #define GPIO_BASE 		(PERIPH_BASE + 0x200000UL)
 
-//LED definitions: ACT LED on GPIO 47
-#define LED_FSEL        FSEL4
-#define LED_FSELBIT     21
+/** LED definitions: ACT LED on GPIO 47 **/
+#define LED_FSEL        FSEL4	// FSEL#; # = floor(GPIO# / 10)
+#define LED_FSELBIT     21		// = (GPIO# % 10) * 3
 #define LED_SET         SET1
 #define LED_CLR         CLR1
-#define LED_GPIOBIT     15
+#define LED_GPIOBIT     15		// = (GPIO# % 32)
+
+/** TX on GPIO 14 **/
+#define TX_FSEL 		FSEL1
+#define TX_FSELMASK		(7<<12)
+#define TX_FSELBIT 		(2<<12)
+//#define TX_FSELBIT 		13 		// = (GPIO# % 10) * 3 + 1
+#define TX_PUD 			PUD
+#define TX_PUDCLK		PUDCLK0
+#define TX_PUDCLKBIT	14
+
+/** RX on GPIO15 **/
+#define RX_FSEL			FSEL1
+#define RX_FSELMASK		(7<<15)
+#define RX_FSELBIT 		(2<<15)
+//#define RX_FSELBIT		16		// = (GPIO# % 10) * 3 + 1
+#define RX_IO			LEV0	// = floor(GPIO# / 10)
+#define RX_IOBIT		15		// = (GPIO# % 32)
+
+/** General definitions **/
+#define PUD_PULLDOWN	(1<<0)
+#define PUD_PULLUP 		(1<<1)
 
 typedef struct {				//Offset from base:
 	volatile uint32_t FSEL0;		//0x00

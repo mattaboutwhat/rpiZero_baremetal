@@ -31,5 +31,6 @@ typedef struct {
     } irq_controller_t;
 
 extern irq_controller_t* getIRQController( void );
+void flashLED(void);
 
 #endif
