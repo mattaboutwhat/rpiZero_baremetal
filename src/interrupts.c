@@ -1,7 +1,7 @@
 #include "interrupts.h"
 #include "armtimer.h"
 #include "gpio.h"
-//.#include "rpi-aux.h"
+#include "rpi-aux.h"
 
 static irq_controller_t* rpiIRQController = (irq_controller_t*)IRQ_BASE;
 
@@ -14,18 +14,28 @@ irq_controller_t* getIRQController(void)
 
 void __attribute__((interrupt("IRQ"))) interrupt_vector(void)
 {
-	static int lit=0;
+	static int lit=1;
 
-	if (lit){
-		getGPIOController()->LED_SET = (1<<LED_GPIOBIT);
-		lit=0;
-	}
-	else {
-		getGPIOController()->LED_CLR = (1<<LED_GPIOBIT);
-		lit=1;
+	/** LED Stuff **/
+	if (getArmTimer()->MaskedIRQ) {
+		if (lit){
+			getGPIOController()->LED_SET = (1<<LED_GPIOBIT);
+			lit=0;
+		}
+		else {
+			getGPIOController()->LED_CLR = (1<<LED_GPIOBIT);
+			lit=1;
+		}
+		getArmTimer()->IRQClear = 1;
 	}
 
-	getArmTimer()->IRQClear = 1;
+	/** mUART stuff **/
+	if ( (getAuxController()->IRQ & 1) == 1) {						//if mini uart interrupt
+		if ( (getAuxController()->MU_LSR & 0x01) == 1) {				//if data ready
+			getAuxController()->MU_IO = getAuxController()->MU_IO;			//echo
+		}
+		//no IRQ flag to clear?	
+	}
 }
 
 void __attribute__((interrupt("ABORT"))) reset_vector(void)
