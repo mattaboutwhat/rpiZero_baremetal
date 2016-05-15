@@ -33,14 +33,10 @@ void kernel_main(unsigned int r0, unsigned int r1, unsigned int atags)
 	//_enable_interrupts();
 
 	while(1) {
-		//if ( getAuxController()->MU_STAT & 0x7 ) {
-		//if ( getAuxController()->MU_LSR & 0x40 ) {
-			//load tx byte
-		//	getAuxController()->MU_IO = 0x41;
-		//	getGPIOController()->LED_SET = (1<<LED_GPIOBIT);
-		
-		while (  (getAuxController()->MU_LSR & (1<<5) ) == 0   );
-		getAuxController()->MU_IO = 0x41;
+	
+		while ( (getAuxController()->MU_LSR & 0x01) == 0 );		//data ready
+		//while ( (getAuxController()->MU_LSR & 0x20) == 0 );		//TX empty
+		getAuxController()->MU_IO = getAuxController()->MU_IO;
 
 		if (led){
 			getGPIOController()->LED_SET = (1<<LED_GPIOBIT);
@@ -50,6 +46,5 @@ void kernel_main(unsigned int r0, unsigned int r1, unsigned int atags)
 			getGPIOController()->LED_CLR = (1<<LED_GPIOBIT);
 			led=1;
 		}
-		WaitMicroSeconds(300000);
 	}
 }

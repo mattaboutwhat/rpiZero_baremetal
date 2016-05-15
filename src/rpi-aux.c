@@ -33,7 +33,7 @@ void initMUARTtx(void)
 	auxController->MU_LCR = 3;		//8-bit mode
 	auxController->MU_BAUD = 542;	//57600 baud
 	auxController->MU_IIR = 0xC6;	//clear the FIFOs
-	auxController->MU_CNTL = 2;		//tx en; rx dis;
+	auxController->MU_CNTL = 3;		//TX & RX Enabled;
 }
 
 int initMUART(void)
