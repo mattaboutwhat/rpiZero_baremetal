@@ -70,6 +70,8 @@ typedef struct {						//offset from AUX_BASE
 } aux_t;
 
 extern aux_t* getAuxController(void);
-extern void   initMUART(void);
+extern void   initMUART(int);
+void MUARTwrite(char);
+void printu(char*);
 
 #endif

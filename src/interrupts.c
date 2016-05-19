@@ -29,12 +29,8 @@ void __attribute__((interrupt("IRQ"))) interrupt_vector(void)
 		getArmTimer()->IRQClear = 1;
 	}
 
-	/** mUART stuff **/
-	if ( (getAuxController()->IRQ & 1) == 1) {						//if mini uart interrupt
-		if ( (getAuxController()->MU_LSR & 0x01) == 1) {				//if data ready
-			getAuxController()->MU_IO = getAuxController()->MU_IO;			//echo
-		}
-		//no IRQ flag to clear?	
+	else {
+		flashLED();
 	}
 }
 

@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include <string.h>
 
 #include "base.h"
 #include "gpio.h"
@@ -22,14 +22,14 @@ void kernel_main(unsigned int r0, unsigned int r1, unsigned int atags)
 						 	 INT_EN     | TIM_EN;			//0xAA
 
 	/** Configure mUART **/  
-	initMUART();
+	initMUART(115200);
 
 	/** Enable interrupts **/
 	getIRQController()->EnableBasicIRQs = 1; 		//enable arm timer interrupts
-	getIRQController()->EnableIRQs1 |= (1<<29);		//enable "aux_int" interrupts
-	_enable_interrupts();
+	//_enable_interrupts();
 
 	while(1) {
-		;
+		printu("whatever");
+		WaitMicroSeconds(500000);
 	}
 }
