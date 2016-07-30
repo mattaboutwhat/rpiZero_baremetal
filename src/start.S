@@ -99,7 +99,6 @@ _enable_interrupts:
 	bic		r0, r0, #0x80
 	msr		cpsr_c, r0
 	mov 	pc, lr
-
 /*
 _disable_interrupts:
 	//Doesn't work :(

@@ -1,7 +1,8 @@
 #include "rpi-aux.h"
 #include "gpio.h"
+#include "interrupts.h"
 
-#define SYSCLK		250000000
+//#define SYSCLK		250000000
 
 static aux_t* auxController = (aux_t*)AUX_BASE;
 
@@ -10,18 +11,20 @@ aux_t* getAuxController(void)
 	return auxController;
 }
 
-void initMUART(int baud)
+int initMUART(int baud)
 {
-	int i, baudreg;
+	int i;
 
-	/** Pick baudreg **/
+	// Pick baudre
 	switch(baud) {
 		case 57600:
-			baudreg=542;
+			baud=542;
 			break;
 		case 115200:
-			baudreg=270;
+			baud=270;
 			break;
+		default:	
+			flashLED();	//error trap
 	}
 
 	/** GPIO Settings **/
@@ -31,7 +34,7 @@ void initMUART(int baud)
 	getGPIOController()->RX_FSEL |=  RX_FSELBIT;		//RX on GPIO15 alt5
 
 	/** TX - Disable Pullup/down **/
-	getGPIOController()->TX_PUD = PUD_PULLUP;				//write to PUD
+	getGPIOController()->TX_PUD = 0;						//write to PUD
 	for (i=0; i<150; i++);									//wait 150 clock cycles
 	getGPIOController()->TX_PUDCLK = (1 << TX_PUDCLKBIT);	//write to PUDCLK1
 	for (i=0; i<150; i++);									//wait 150 cycles
@@ -42,9 +45,11 @@ void initMUART(int baud)
 	auxController->ENABLES |= 1;			//mUART en
 	auxController->MU_IER   = 0;			//No MUART interrupts
 	auxController->MU_LCR   = 3;			//8-bit mode (See errata)
-	auxController->MU_BAUD  = baudreg;		//57600 baud @ 250MHz
+	auxController->MU_BAUD  = baud;			//Set baudrate register
 	auxController->MU_IIR   = 0xC6;			//clear the FIFOs
 	auxController->MU_CNTL  = 3;			//TX & RX Enabled;
+
+	return 0;
 }
 
 //void MUARTwrite(char b)
@@ -56,12 +61,12 @@ void MUARTwrite(char b)
 
 void printu(char* ptr)
 {
-	static int lit=1;
+	//static int lit=1;
 
 	while (*ptr) {
 		MUARTwrite(*ptr++);
 	}
-
+/*
 	if (lit) {
 		getGPIOController()->LED_SET   = (1 << LED_GPIOBIT);
 		lit=0;
@@ -70,4 +75,5 @@ void printu(char* ptr)
 		getGPIOController()->LED_CLR   = (1 << LED_GPIOBIT);
 		lit=1;
 	}
+*/
 }

@@ -3,10 +3,12 @@ bin/bootcode.bin
 bin/start.elf
 src/keep_away
 todo.txt
-.tags
-.tags_sorted_by_file
+.*
 *.sublime-project
 *.sublime-workspace
 gpio_functions.*
 uart_baudrates.*
 build_pause.bat
+emmc_struct_example.c
+BCM2835_Peripherals[RPiZero].pdf.lnk
+sd_commands.xlsx

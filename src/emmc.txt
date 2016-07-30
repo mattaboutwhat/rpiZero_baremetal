@@ -1,0 +1,74 @@
+/* Using the BCM2835 EMMC Module to initialize
+ * the Raspberry Pi Zero SDHC card in SPI mode.
+ *
+ * PINS:
+ * 	SD_DATA0 = SD_D0 (MISO); GPIO50; Pullup input
+ * 	SD_CMD   = SD_DI (MOSI); GPIO49; Output (pullup?)
+ * 	SD_DATA3 = SD_CS       ; GPIO 53; Output
+ * 	Clock
+ */
+
+// Registers to initially configure:
+
+#define ARG1{	
+}
+#define ARG2 {
+}
+#define BLKSIZECNT{	
+}
+#define CMDTM{	
+}
+#define DATA{	
+}
+#define STATUS{	
+}
+#define CONTROL0{	
+}
+#define CONTROL1{	
+}
+#define INTERRUPT{	
+}
+#define IRPT_MASK{	
+}
+#define IRPT_EN{	
+}
+#define CONTROL2{	
+}
+#define FORCE_IRPT{	
+}
+#define BOOT_TIMEOUT{	
+}
+#define DBG_SEL{	
+}
+#define EXRDFIFO_CFG{	
+}
+#define EXRDFIFO_EN{	
+}
+#define TUNE_STEP {
+}
+#define TUNE_STEPS_STD{	
+}
+#define TUNE_STEPS_DDR{	
+}
+#define SPI_INT_SPT{	
+}
+#define SLOTISR_VER{	
+}
+
+// Read-only Registers
+#define RESP0
+#define RESP1
+#define RESP2
+#define RESP3
+
+
+
+
+// Start Up Sequence
+1. At least 1ms after supply voltage applied, set SPI Clock
+   to between 100-400kHz. Set DI and CS high and apply 74 or
+   more cock pulses. Card will then be in "native operating
+   mode" and is ready to accept commands.
+2. Send CMD0+CRC with CS low to reset into SPI mode. The card will
+   respond with R1 with In Idle State bit set, ie 0x01.
+3. 
